@@ -3,7 +3,7 @@ import axios from "axios";
 
 function App() {
   const CLIENT_ID = "d11e1a72eb8341de8b61f322b2d8e1f1";
-  const REDIRECT_URI = "http://localhost:3000";
+  const REDIRECT_URI = "https://spotify-report-by-therealsupat.herokuapp.com";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
@@ -120,14 +120,6 @@ function App() {
         overflowX: "hidden",
       }}
     >
-      {!token && (
-        <a
-          href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=user-top-read&response_type=${RESPONSE_TYPE}`}
-        >
-          Login to Spotify
-        </a>
-      )}
-
       {token ? (
         <div style={{ width: "100%", justifyContent: "center" }}>
           {!!user && !!artists && !!tracks ? (
@@ -706,9 +698,9 @@ function App() {
               <div>
                 <button
                   style={{
-                    margin: "50% auto auto auto",
+                    margin: "25% auto auto auto",
                     padding: "10px",
-                    width: "180px",
+                    width: "200px",
                     backgroundColor: "#555",
                     border: "none",
                     color: "#ffffff",
@@ -748,8 +740,8 @@ function App() {
         >
           <div
             style={{
-              margin: "50% auto auto auto",
-              width: "180px",
+              margin: "25% auto auto auto",
+              width: "200px",
               padding: "10px",
               backgroundColor: "#555",
               border: "none",
