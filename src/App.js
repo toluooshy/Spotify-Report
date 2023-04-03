@@ -462,7 +462,7 @@ function App() {
                             }}
                           />
 
-                          <p
+                          {/* <p
                             style={{
                               fontSize: `${
                                 index > 5 ? (index > 9 ? "5px" : "7px") : "55%"
@@ -504,7 +504,7 @@ function App() {
                                       })
                                       .join(" ")}
                               </p>
-                            ))}
+                            ))} */}
                         </div>
                       </div>
                     ))}
@@ -641,7 +641,7 @@ function App() {
                             }}
                           />
 
-                          <p
+                          {/* <p
                             style={{
                               fontSize: `${
                                 index > 5 ? (index > 9 ? "5px" : "7px") : "55%"
@@ -672,7 +672,7 @@ function App() {
                               >
                                 - {trackArtist.name}
                               </p>
-                            ))}
+                            ))} */}
                         </div>
                       </div>
                     ))}
