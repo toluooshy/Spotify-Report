@@ -186,7 +186,7 @@ function App() {
                         border: "none",
                         color: "#ffffff",
                         borderRadius: "4px",
-                        fontSize: "9px",
+                        fontSize: "8px",
                       }}
                       onMouseEnter={({ currentTarget }) => {
                         currentTarget.style.opacity = "50%";
@@ -211,7 +211,7 @@ function App() {
                         border: "none",
                         color: "#ffffff",
                         borderRadius: "4px",
-                        fontSize: "9px",
+                        fontSize: "8px",
                       }}
                       onMouseEnter={({ currentTarget }) => {
                         currentTarget.style.opacity = "50%";
@@ -236,7 +236,7 @@ function App() {
                         border: "none",
                         color: "#ffffff",
                         borderRadius: "4px",
-                        fontSize: "9px",
+                        fontSize: "8px",
                       }}
                       onMouseEnter={({ currentTarget }) => {
                         currentTarget.style.opacity = "50%";
@@ -403,11 +403,7 @@ function App() {
                           <p
                             style={{
                               fontSize: `${
-                                index > 5
-                                  ? index > 9
-                                    ? "10px"
-                                    : "13px"
-                                  : "65%"
+                                index > 5 ? (index > 9 ? "8px" : "10px") : "65%"
                               }`,
                               padding: "0px",
                               margin: "7.5% 0%",
@@ -586,11 +582,7 @@ function App() {
                           <p
                             style={{
                               fontSize: `${
-                                index > 5
-                                  ? index > 9
-                                    ? "10px"
-                                    : "13px"
-                                  : "65%"
+                                index > 5 ? (index > 9 ? "8px" : "10px") : "65%"
                               }`,
                               padding: "0px",
                               margin: "7.5% 0%",
@@ -722,7 +714,7 @@ function App() {
                     currentTarget.style.opacity = "100%";
                   }}
                   onClick={() => {
-                    getSpotifyData();
+                    getSpotifyData("short_term");
                   }}
                 >
                   Get Data! 🚀
