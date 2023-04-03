@@ -403,7 +403,11 @@ function App() {
                           <p
                             style={{
                               fontSize: `${
-                                index > 5 ? (index > 9 ? "35%" : "50%") : "65%"
+                                index > 5
+                                  ? index > 9
+                                    ? "10px"
+                                    : "13px"
+                                  : "65%"
                               }`,
                               padding: "0px",
                               margin: "7.5% 0%",
@@ -465,7 +469,7 @@ function App() {
                           <p
                             style={{
                               fontSize: `${
-                                index > 5 ? (index > 9 ? "10%" : "20%") : "55%"
+                                index > 5 ? (index > 9 ? "5px" : "7px") : "55%"
                               }`,
                               padding: "0px",
                               margin: "10% 0% 5% 0%",
@@ -582,7 +586,11 @@ function App() {
                           <p
                             style={{
                               fontSize: `${
-                                index > 5 ? (index > 9 ? "35%" : "50%") : "65%"
+                                index > 5
+                                  ? index > 9
+                                    ? "10px"
+                                    : "13px"
+                                  : "65%"
                               }`,
                               padding: "0px",
                               margin: "7.5% 0%",
@@ -644,7 +652,7 @@ function App() {
                           <p
                             style={{
                               fontSize: `${
-                                index > 5 ? (index > 9 ? "10%" : "20%") : "55%"
+                                index > 5 ? (index > 9 ? "5px" : "7px") : "55%"
                               }`,
                               padding: "0px",
                               margin: "10% 0% 5% 0%",
