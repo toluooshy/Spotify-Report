@@ -3,7 +3,7 @@ import axios from "axios";
 
 function App() {
   const CLIENT_ID = "d11e1a72eb8341de8b61f322b2d8e1f1";
-  const REDIRECT_URI = "https://spotify-report-by-therealsupat.herokuapp.com";
+  const REDIRECT_URI = "https://spotify-report-by-therealsupat.herokuapp.com"; // "http://localhost:3000"; //
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
@@ -34,7 +34,6 @@ function App() {
   }, []);
 
   const logout = () => {
-    setToken("");
     window.localStorage.removeItem("token");
   };
 
@@ -107,6 +106,8 @@ function App() {
           requiredObj[key] = obj[key];
         }
       });
+
+    logout();
     return requiredObj;
   };
 
@@ -251,27 +252,6 @@ function App() {
                     >
                       All Time
                     </button>
-                    <button
-                      style={{
-                        height: "17px",
-                        margin: "2px",
-                        width: "65px",
-                        backgroundColor: "#000",
-                        border: "none",
-                        color: "#ffffff",
-                        borderRadius: "4px",
-                        fontSize: "9px",
-                      }}
-                      onMouseEnter={({ currentTarget }) => {
-                        currentTarget.style.opacity = "50%";
-                      }}
-                      onMouseOut={({ currentTarget }) => {
-                        currentTarget.style.opacity = "100%";
-                      }}
-                      onClick={logout}
-                    >
-                      Sign Out
-                    </button>
                   </div>
                   <div
                     style={{
@@ -305,7 +285,7 @@ function App() {
                             key={index}
                             style={{
                               padding: "10px 10px 0px 0px",
-                              fontSize: "75%",
+                              fontSize: "70%",
                               textAlign: "left",
                             }}
                           >
@@ -382,6 +362,7 @@ function App() {
                               objectFit: "cover",
                               width: "100%",
                               aspectRatio: "1/1",
+                              marginTop: "2px",
                               borderRadius: "4px",
                             }}
                           />
@@ -391,19 +372,23 @@ function App() {
                               fontSize: `${
                                 index > 5
                                   ? index > 9
-                                    ? "65%"
-                                    : "100%"
-                                  : "150%"
+                                    ? "15px"
+                                    : "25px"
+                                  : "35px"
                               }`,
                               padding: "0px",
-                              margin: "5% 0%",
+                              margin: "-10px 0px -5px 0px",
                               color: "#94826d",
                             }}
                           >{`${index + 1}.`}</p>
                           <p
                             style={{
                               fontSize: `${
-                                index > 5 ? (index > 9 ? "8px" : "10px") : "65%"
+                                index > 5
+                                  ? index > 9
+                                    ? "6.5px"
+                                    : "10px"
+                                  : "65%"
                               }`,
                               padding: "0px",
                               margin: "7.5% 0%",
@@ -561,6 +546,7 @@ function App() {
                               objectFit: "cover",
                               width: "100%",
                               aspectRatio: "1/1",
+                              marginTop: "2px",
                               borderRadius: "4px",
                             }}
                           />
@@ -570,19 +556,23 @@ function App() {
                               fontSize: `${
                                 index > 5
                                   ? index > 9
-                                    ? "65%"
-                                    : "100%"
-                                  : "150%"
+                                    ? "15px"
+                                    : "25px"
+                                  : "35px"
                               }`,
                               padding: "0px",
-                              margin: "5% 0%",
+                              margin: "-10px 0px -5px 0px",
                               color: "#94826d",
                             }}
                           >{`${index + 1}.`}</p>
                           <p
                             style={{
                               fontSize: `${
-                                index > 5 ? (index > 9 ? "8px" : "10px") : "65%"
+                                index > 5
+                                  ? index > 9
+                                    ? "6.5px"
+                                    : "10px"
+                                  : "65%"
                               }`,
                               padding: "0px",
                               margin: "7.5% 0%",
