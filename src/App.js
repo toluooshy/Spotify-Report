@@ -423,8 +423,8 @@ function App() {
                                 fontSize: `${
                                   index > 5
                                     ? index > 9
-                                      ? "10%"
-                                      : "20%"
+                                      ? "5px"
+                                      : "7px"
                                     : "55%"
                                 }`,
                               }}
@@ -436,8 +436,8 @@ function App() {
                                 fontSize: `${
                                   index > 5
                                     ? index > 9
-                                      ? "10%"
-                                      : "20%"
+                                      ? "5px"
+                                      : "7px"
                                     : "55%"
                                 }`,
                               }}
@@ -483,8 +483,8 @@ function App() {
                                   fontSize: `${
                                     index > 5
                                       ? index > 9
-                                        ? "10%"
-                                        : "20%"
+                                        ? "5px"
+                                        : "7px"
                                       : "55%"
                                   }`,
                                   color: "#333",
@@ -602,8 +602,8 @@ function App() {
                                 fontSize: `${
                                   index > 5
                                     ? index > 9
-                                      ? "10%"
-                                      : "20%"
+                                      ? "5px"
+                                      : "7px"
                                     : "55%"
                                 }`,
                               }}
@@ -615,8 +615,8 @@ function App() {
                                 fontSize: `${
                                   index > 5
                                     ? index > 9
-                                      ? "10%"
-                                      : "20%"
+                                      ? "5px"
+                                      : "7px"
                                     : "55%"
                                 }`,
                               }}
@@ -662,8 +662,8 @@ function App() {
                                   fontSize: `${
                                     index > 5
                                       ? index > 9
-                                        ? "10%"
-                                        : "20%"
+                                        ? "5px"
+                                        : "7px"
                                       : "55%"
                                   }`,
                                   color: "#333",
