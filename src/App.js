@@ -43,6 +43,7 @@ function App() {
   };
 
   const getSpotifyData = async (term) => {
+    document.body.style.zoom = "50%";
     await axios
       .get("https://api.spotify.com/v1/me/", {
         headers: {
@@ -121,6 +122,7 @@ function App() {
         backgroundColor: "#191414",
         color: "#ffffff",
         overflowX: "hidden",
+        height: `${dimensions.height * 2}px`,
       }}
     >
       <div
@@ -161,7 +163,7 @@ function App() {
                       style={{
                         display: "flex",
                         padding: ".75%",
-                        maxWidth: "150px",
+                        maxWidth: "390px",
                         margin: "0px 30px 0px 50px",
                         alignItems: "center",
                       }}
@@ -172,8 +174,8 @@ function App() {
                         }
                         alt={`${user.display_name}'s profile picture.`}
                         style={{
-                          width: "128px",
-                          height: "128px",
+                          width: "84px",
+                          height: "84px",
                           borderRadius: "100%",
                           margin: "0px 10px 0px 0px",
                         }}
@@ -181,7 +183,7 @@ function App() {
                       <i
                         style={{
                           fontSize: `${
-                            200 / (user.display_name.length * 0.6)
+                            130 / (user.display_name.length * 0.3)
                           }px`,
                           width: "300px",
                         }}
@@ -193,7 +195,7 @@ function App() {
                       <div
                         style={{
                           position: "absolute",
-                          top: "150px",
+                          top: "85px",
                           left: "-50px",
                           rotate: "270deg",
                         }}
@@ -208,8 +210,8 @@ function App() {
                       </div>
                       <div
                         style={{
-                          width: "200px",
-                          height: "200px",
+                          width: "128px",
+                          height: "128px",
                           borderRadius: "16px",
                           backgroundColor: "#ffffff",
                         }}
@@ -217,8 +219,8 @@ function App() {
                         <div
                           className="stacked-linear"
                           style={{
-                            width: "200px",
-                            height: "200px",
+                            width: "128px",
+                            height: "128px",
                             borderRadius: "16px",
                             filter: `saturate(100%) hue-rotate(${
                               (user.display_name.length / 4.2069) * 270
@@ -326,7 +328,7 @@ function App() {
                         className="title"
                         style={{
                           display: "flex",
-                          margin: "5px 10px",
+                          margin: "-20px 10px 5px 10px",
                           fontSize: "48px",
                         }}
                       >
@@ -340,7 +342,7 @@ function App() {
                       <div
                         style={{
                           display: "flex",
-                          padding: "100px 0px 20px 0px",
+                          padding: "80px 0px 20px 0px",
                           justifyContent: "space-around",
                         }}
                       >
@@ -443,38 +445,42 @@ function App() {
                         opacity: "70%",
                       }}
                     />
-                    <div style={{}}>
-                      <div style={{ display: "flex" }}>
-                        <div style={{ flex: "4" }}>
-                          <ArtistCard artist={artists[0]} index={0} />
-                        </div>
-                        <div
-                          style={{
-                            flex: "5",
-                          }}
-                        >
-                          <div style={{ margin: "20px auto" }}>
-                            {artists.slice(1, 5).map((artist, index) => (
-                              <ArtistCard
-                                key={index + 1}
-                                artist={artist}
-                                index={index + 1}
-                              />
-                            ))}
+                    {artists.length > 0 ? (
+                      <div style={{}}>
+                        <div style={{ display: "flex" }}>
+                          <div style={{ flex: "4" }}>
+                            <ArtistCard artist={artists[0]} index={0} />
+                          </div>
+                          <div
+                            style={{
+                              flex: "5",
+                            }}
+                          >
+                            <div style={{ margin: "20px auto" }}>
+                              {artists.slice(1, 5).map((artist, index) => (
+                                <ArtistCard
+                                  key={index + 1}
+                                  artist={artist}
+                                  index={index + 1}
+                                />
+                              ))}
+                            </div>
                           </div>
                         </div>
+                        <br />
+                        <div style={{ display: "flex" }}>
+                          {artists.slice(6, 11).map((artist, index) => (
+                            <ArtistCard
+                              key={index + 5}
+                              artist={artist}
+                              index={index + 5}
+                            />
+                          ))}
+                        </div>
                       </div>
-                      <br />
-                      <div style={{ display: "flex" }}>
-                        {artists.slice(6, 11).map((artist, index) => (
-                          <ArtistCard
-                            key={index + 5}
-                            artist={artist}
-                            index={index + 5}
-                          />
-                        ))}
-                      </div>
-                    </div>
+                    ) : (
+                      <div style={{ height: "655px" }}>Insufficient Data</div>
+                    )}
                   </div>
                   <br />
                   <br />
@@ -506,33 +512,37 @@ function App() {
                         filter: "brightness(1000%)",
                         opacity: "70%",
                       }}
-                    />
-                    <div style={{}}>
-                      <div style={{ display: "flex" }}>
-                        <div style={{ flex: "4" }}>
-                          <TrackCard track={tracks[0]} index={0} />
+                    />{" "}
+                    {tracks.length > 0 ? (
+                      <div style={{}}>
+                        <div style={{ display: "flex" }}>
+                          <div style={{ flex: "4" }}>
+                            <TrackCard track={tracks[0]} index={0} />
+                          </div>
+                          <div style={{ flex: "5" }}>
+                            {tracks.slice(1, 5).map((track, index) => (
+                              <TrackCard
+                                key={index + 1}
+                                track={track}
+                                index={index + 1}
+                              />
+                            ))}
+                          </div>
                         </div>
-                        <div style={{ flex: "5" }}>
-                          {tracks.slice(1, 5).map((track, index) => (
+                        <br />
+                        <div style={{ display: "flex" }}>
+                          {tracks.slice(6, 11).map((track, index) => (
                             <TrackCard
-                              key={index + 1}
+                              key={index + 5}
                               track={track}
-                              index={index + 1}
+                              index={index + 5}
                             />
                           ))}
                         </div>
                       </div>
-                      <br />
-                      <div style={{ display: "flex" }}>
-                        {tracks.slice(6, 11).map((track, index) => (
-                          <TrackCard
-                            key={index + 5}
-                            track={track}
-                            index={index + 5}
-                          />
-                        ))}
-                      </div>
-                    </div>
+                    ) : (
+                      <div style={{ height: "620px" }}>Insufficient Data</div>
+                    )}
                   </div>
                 </div>
               </div>
